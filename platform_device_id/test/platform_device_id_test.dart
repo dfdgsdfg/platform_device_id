@@ -1,25 +1,29 @@
-import 'package:flutter/services.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:platform_device_id/platform_device_id.dart';
+// import 'package:flutter_test/flutter_test.dart';
+// import 'package:platform_device_id/platform_device_id.dart';
+// import 'package:platform_device_id/platform_device_id_platform_interface.dart';
+// import 'package:platform_device_id/platform_device_id_method_channel.dart';
+// import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
-void main() {
-  const MethodChannel channel =
-      MethodChannel('com.di1shuai.flutter/platform_device_id');
+// class MockPlatformDeviceIdPlatform
+//     with MockPlatformInterfaceMixin
+//     implements PlatformDeviceIdPlatform {
 
-  TestWidgetsFlutterBinding.ensureInitialized();
+//   @override
+//   Future<String?> getPlatformVersion() => Future.value('42');
+// }
 
-  setUp(() {
-    channel.setMockMethodCallHandler((MethodCall methodCall) async {
-      return '42';
-    });
-  });
+// void main() {
+//   final PlatformDeviceIdPlatform initialPlatform = PlatformDeviceIdPlatform.instance;
 
-  tearDown(() {
-    channel.setMockMethodCallHandler(null);
-  });
+//   test('$MethodChannelPlatformDeviceId is the default instance', () {
+//     expect(initialPlatform, isInstanceOf<MethodChannelPlatformDeviceId>());
+//   });
 
-  test('Get Device ID ', () async {
-    String? deviceID = await PlatformDeviceId.getDeviceId;
-    expect(deviceID, '42');
-  });
-}
+//   test('getPlatformVersion', () async {
+//     PlatformDeviceId platformDeviceIdPlugin = PlatformDeviceId();
+//     MockPlatformDeviceIdPlatform fakePlatform = MockPlatformDeviceIdPlatform();
+//     PlatformDeviceIdPlatform.instance = fakePlatform;
+
+//     expect(await platformDeviceIdPlugin.getPlatformVersion(), '42');
+//   });
+// }

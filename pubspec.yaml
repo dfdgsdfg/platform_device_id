@@ -1,0 +1,11 @@
+name: _
+publish_to: none
+environment:
+  sdk: ^3.6.0
+workspace:
+  - platform_device_id
+  - platform_device_id_linux
+  - platform_device_id_macos
+  - platform_device_id_web
+  - platform_device_id_windows
+  - platform_device_id_platform_interface
